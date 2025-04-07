@@ -1,0 +1,15 @@
+# Create a 5x5 grid with empty spaces
+grid = [[' ' for _ in range(5)] for _ in range(5)]
+
+# Define hero's starting position
+hero_position = (2, 2)  # (row, column)
+
+# Define towns
+towns = {(0, 1): "T1", (4, 3): "T2"}
+
+# Update grid using list comprehension
+grid = [['H' if (r, c) == hero_position else towns.get((r, c), ' ') for c in range(5)] for r in range(5)]
+
+# Display the grid
+for row in grid:
+    print(row)
